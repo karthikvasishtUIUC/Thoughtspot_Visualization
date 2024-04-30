@@ -1,38 +1,40 @@
+/* App.css */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px; /* Limit the width of the app */
+}
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chart-container {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Optional: adds a shadow for some depth */
+  border-radius: 10px; /* Optional: rounds the corners */
+  background: #fff; /* Optional: sets a background color */
+  padding: 20px;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles specific to each chart */
+.pie-chart, .bar-chart {
+  margin: auto;
+  max-width: 600px; /* Adjust this value to fit your design */
+  height: 300px; /* Adjust this value to control the height */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ensures the canvas has a size but respects the container's limits */
+canvas {
+  max-width: 100%;
+  max-height: 100%; /* May not be necessary if height is controlled by the container */
 }
