@@ -1,21 +1,19 @@
-import React from 'react';
-import PieChart from './Piechart.js';
-import BarChart from './Barchart.js';
-import ThoughtSpotLiveboard from './Thoughtspot.js';
+import { AuthType, init } from "@thoughtspot/visual-embed-sdk";
 import './App.css';
+import { Search } from "./Search";
+import { EmbedLiveboard } from "./tse";
 
+init({
+  thoughtSpotHost: 'https://team2.thoughtspot.cloud/',
+  authType: AuthType.None
+});
 
 function App() {
   return (
     <div className="App">
-      <h1>Bank Account Overview</h1>
-      <div className="chart-container pie-chart">
-        <PieChart />
-      </div>
-      <div className="chart-container bar-chart">
-        <BarChart />
-      </div>
-      <ThoughtSpotLiveboard />
+       <Search/>
+      <EmbedLiveboard/>
+      
     </div>
   );
 }
